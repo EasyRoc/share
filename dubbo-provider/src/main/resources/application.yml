@@ -1,0 +1,26 @@
+server:
+  # 服务端口
+  port: 7777
+spring:
+  application:
+    name: dubbo-provider
+# dubbo 相关配置(dubbo 的配置不再以 Spring 开头)
+dubbo:
+  application:
+    # 应用名称
+    name: order-provider
+  scan:
+    # 接口实现者（服务实现）包
+    base-packages: com.example.dubboprovider.impl
+  # 注册中心信息
+  registry:
+    address: zookeeper://47.97.69.18:2181
+    timeout: 30000
+    protocol: zookeeper
+  protocol:
+    # 协议名称
+    name: dubbo
+    # 协议端口
+    port: 20880
+  config-center:
+    timeout: 30000
