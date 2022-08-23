@@ -3,12 +3,11 @@ package com.example.orderapi.rpc;
 import com.example.orderapi.domain.OrderDomain;
 import com.example.orderapi.result.RpcResult;
 
-public interface OrderDubboService {
-    RpcResult<OrderDomain> getOrder();
+public interface LruCacheService {
 
     /**
-     * 上下文信息
+     * 结果缓存
      * @return
      */
-    RpcResult<OrderDomain> getRpcContent();
+    RpcResult<OrderDomain> getLruCache();
 }

@@ -1,0 +1,20 @@
+<!--
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://dubbo.apache.org/schema/dubbo
+       http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <bean id="callbackService" class="com.example.dubboprovider.impl.CallbackServiceImpl"/>
+    <dubbo:service interface="com.example.orderapi.rpc.CallbackService" ref="callbackService" connections="1"
+                   callbacks="1000" version="1.0.0">
+        <dubbo:method name="addListener">
+            <dubbo:argument index="1" callback="true"/>
+            &lt;!&ndash;也可以通过指定类型的方式&ndash;&gt;
+            &lt;!&ndash;<dubbo:argument type="com.demo.CallbackListener" callback="true" />&ndash;&gt;
+        </dubbo:method>
+    </dubbo:service>
+</beans>&lt;!&ndash;&ndash;&gt;-->

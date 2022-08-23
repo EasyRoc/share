@@ -2,7 +2,7 @@ server:
   port: 7000
 spring:
   application:
-    name: dubbo-consumer
+    name: order-consumer
 # dubbo 相关配置
 dubbo:
   application:
@@ -10,4 +10,4 @@ dubbo:
   registry:
     address: zookeeper://47.97.69.18:2181
   config-center:
-    timeout: 30000
+    timeout: 300000
