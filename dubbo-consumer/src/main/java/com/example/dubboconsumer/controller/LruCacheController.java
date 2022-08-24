@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/lruCache")
 public class LruCacheController {
 
-    @Reference(version = "1.0.0",cache = "lru")
+    @Reference(version = "1.0.0",cache = "lru", check = false)
     private LruCacheService lruCacheService;
 
     @GetMapping("lruCacheTest")

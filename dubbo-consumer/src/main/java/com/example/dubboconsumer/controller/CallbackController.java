@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/callback")
 public class CallbackController {
 
-    @Reference(version = "1.0.0",cache = "lru")
+   /* @Reference(version = "1.0.0",check = false)
     private CallbackService callbackService;
 
     @GetMapping("callbackTest")
@@ -24,5 +24,5 @@ public class CallbackController {
             }
         });
         return RpcResult.success();
-    }
+    }*/
 }

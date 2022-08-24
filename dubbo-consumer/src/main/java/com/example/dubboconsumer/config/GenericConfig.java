@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class GenericConfig {
 
-    @Bean
+   /* @Bean
     public ReferenceConfig<GenericService> setReferenceConfig(){
         ReferenceConfig<GenericService> reference = new ReferenceConfig<GenericService>();
         reference.setApplication(new ApplicationConfig("order-consumer"));
@@ -19,5 +19,5 @@ public class GenericConfig {
         reference.setVersion("1.0.0");
         reference.setGeneric(true);
         return reference;
-    }
+    }*/
 }

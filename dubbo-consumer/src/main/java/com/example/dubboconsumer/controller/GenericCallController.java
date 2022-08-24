@@ -14,12 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/generic")
 public class GenericCallController {
 
-    @Autowired
-    private ReferenceConfig<GenericService> referenceConfig;
-
     @GetMapping("genericTest")
     public RpcResult getOrder() {
-        GenericService genericService = referenceConfig.get();
+        ReferenceConfig<GenericService> reference = new ReferenceConfig<GenericService>();
+        reference.setApplication(new ApplicationConfig("order-consumer"));
+        reference.setRegistry(new RegistryConfig("zookeeper://47.97.69.18:2181"));
+        reference.setInterface("com.example.orderapi.rpc.GenericCallService");
+        reference.setVersion("1.0.0");
+        reference.setGeneric(true);
+        GenericService genericService = reference.get();
         //方法名；参数类型；参数值
         Object result = genericService.$invoke("genericCall", new String[]{}, new Object[]{});
         return RpcResult.success(result);
